@@ -2,7 +2,7 @@
 
 A modern, user-friendly web application for creating and configuring Lilypad modules using a visual form interface. Built with React, Material-UI, and JSON Forms.
 
-![Module Builder Screenshot](https://images.unsplash.com/photo-1618477388954-7852f32655ec?auto=format&fit=crop&q=80&w=1200&h=600)
+![Module Builder Screenshot](https://github.com/user-attachments/assets/fe59c9dd-02e9-46e2-9001-5e180907d223)
 
 ## Features
 
