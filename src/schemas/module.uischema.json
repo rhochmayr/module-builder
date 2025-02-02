@@ -1,0 +1,134 @@
+{
+  "type": "VerticalLayout",
+  "elements": [
+    {
+      "type": "Group",
+      "label": "Machine Requirements",
+      "elements": [
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/spec/properties/machine/properties/cpu",
+              "options": {
+                "slider": true
+              }
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/spec/properties/machine/properties/ram",
+              "options": {
+                "slider": true
+              }
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/spec/properties/machine/properties/gpu",
+              "options": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Group",
+      "label": "Job Settings",
+      "options": {
+        "compact": true
+      },
+      "elements": [
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/spec/properties/job/properties/APIVersion"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/spec/properties/job/properties/Spec/properties/Engine"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/spec/properties/job/properties/Spec/properties/Deal/properties/Concurrency"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/spec/properties/job/properties/Spec/properties/Verifier"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Group",
+      "label": "Docker Configuration",
+      "options": {
+        "compact": true
+      },
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/spec/properties/job/properties/Spec/properties/Docker/properties/Image"
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/spec/properties/job/properties/Spec/properties/Docker/properties/Entrypoint"
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/spec/properties/job/properties/Spec/properties/Docker/properties/EnvironmentVariables"
+        }
+      ]
+    },
+    {
+      "type": "Group",
+      "label": "Network & Publishing",
+      "options": {
+        "compact": true
+      },
+      "elements": [
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/spec/properties/job/properties/Spec/properties/Network/properties/Type"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/spec/properties/job/properties/Spec/properties/PublisherSpec/properties/Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Group",
+      "label": "Resources",
+      "options": {
+        "compact": true
+      },
+      "elements": [
+        {
+          "type": "HorizontalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/spec/properties/job/properties/Spec/properties/Resources/properties/GPU"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/spec/properties/job/properties/Spec/properties/Resources/properties/cpu"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/spec/properties/job/properties/Spec/properties/Resources/properties/memory"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

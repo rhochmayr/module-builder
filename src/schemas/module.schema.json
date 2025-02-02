@@ -1,0 +1,157 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "spec": {
+      "type": "object",
+      "title": "Module Specification",
+      "properties": {
+        "machine": {
+          "type": "object",
+          "title": "Machine Requirements",
+          "properties": {
+            "cpu": {
+              "type": "integer",
+              "title": "CPU (millicores)",
+              "description": "CPU cores required in millicores (1000m = 1 core)",
+              "minimum": 1000
+            },
+            "ram": {
+              "type": "integer",
+              "title": "RAM (MB)",
+              "description": "RAM required in megabytes",
+              "minimum": 1000
+            },
+            "gpu": {
+              "type": "integer",
+              "title": "GPU Count",
+              "description": "Number of GPUs required",
+              "minimum": 0,
+              "maximum": 8
+            }
+          },
+          "required": ["cpu", "ram", "gpu"]
+        },
+        "job": {
+          "type": "object",
+          "title": "Job Configuration",
+          "properties": {
+            "APIVersion": {
+              "type": "string",
+              "title": "API Version",
+              "enum": ["V1beta1"],
+              "default": "V1beta1"
+            },
+            "Spec": {
+              "type": "object",
+              "title": "Job Specification",
+              "properties": {
+                "Docker": {
+                  "type": "object",
+                  "title": "Docker Configuration",
+                  "properties": {
+                    "Image": {
+                      "type": "string",
+                      "title": "Docker Image",
+                      "description": "The Docker image to use for this module"
+                    },
+                    "Entrypoint": {
+                      "type": "array",
+                      "title": "Entrypoint",
+                      "description": "Command and arguments to run in the container",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "EnvironmentVariables": {
+                      "type": "array",
+                      "title": "Environment Variables",
+                      "description": "Environment variables to set in the container",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": ["Image"]
+                },
+                "Engine": {
+                  "type": "string",
+                  "title": "Engine Type",
+                  "enum": ["Docker"],
+                  "default": "Docker"
+                },
+                "Network": {
+                  "type": "object",
+                  "title": "Network Configuration",
+                  "properties": {
+                    "Type": {
+                      "type": "string",
+                      "title": "Network Type",
+                      "enum": ["None", "Full"],
+                      "default": "None"
+                    }
+                  }
+                },
+                "PublisherSpec": {
+                  "type": "object",
+                  "title": "Publisher Configuration",
+                  "properties": {
+                    "Type": {
+                      "type": "string",
+                      "title": "Publisher Type",
+                      "enum": ["IPFS"],
+                      "default": "IPFS"
+                    }
+                  }
+                },
+                "Resources": {
+                  "type": "object",
+                  "title": "Resources",
+                  "properties": {
+                    "GPU": {
+                      "type": "string",
+                      "title": "GPU Count",
+                      "default": "1"
+                    },
+                    "cpu": {
+                      "type": "string",
+                      "title": "CPU Cores",
+                      "default": "8"
+                    },
+                    "memory": {
+                      "type": "string",
+                      "title": "Memory",
+                      "default": "8Gi"
+                    }
+                  }
+                },
+                "Deal": {
+                  "type": "object",
+                  "title": "Deal Configuration",
+                  "properties": {
+                    "Concurrency": {
+                      "type": "integer",
+                      "title": "Concurrency",
+                      "default": 1,
+                      "minimum": 1
+                    }
+                  },
+                  "required": ["Concurrency"]
+                },
+                "Verifier": {
+                  "type": "string",
+                  "enum": ["Noop"],
+                  "default": "Noop"
+                }
+              },
+              "required": ["Deal", "Docker", "Engine", "Network", "PublisherSpec", "Resources", "Verifier"]
+            }
+          },
+          "required": ["APIVersion", "Spec"]
+        }
+      },
+      "required": ["machine", "job"]
+    }
+  },
+  "required": ["spec"]
+}

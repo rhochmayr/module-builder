@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Override Material-UI styles for a more compact look */
+.MuiFormControl-root {
+  min-width: 120px !important;
+  margin: 2px 0 !important;
+  height: 36px !important;
+}
+
+.MuiFormLabel-root {
+  font-size: 0.8125rem !important;
+  color: #4b5563 !important;
+}
+
+.MuiInputBase-root {
+  background-color: #fff !important;
+}
+
+/* Slider customization */
+.MuiSlider-root {
+  color: #4f46e5 !important;
+}
+
+.MuiSlider-thumb {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.MuiSlider-rail {
+  height: 4px !important;
+  background-color: #e5e7eb !important;
+}
+
+.MuiSlider-track {
+  height: 4px !important;
+}
+
+/* Group styling */
+.MuiAccordion-root {
+  box-shadow: none !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 0.25rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.MuiAccordionSummary-root {
+  min-height: 32px !important;
+  padding: 0 0.5rem !important;
+}
+
+.MuiAccordionDetails-root {
+  padding: 0.5rem !important;
+}
+
+/* Form controls */
+.MuiSelect-select {
+  padding: 4px 8px !important;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 0.25rem !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: #e5e7eb !important;
+}
+
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #d1d5db !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #4f46e5 !important;
+  border-width: 2px !important;
+}
+
+/* Array field styling */
+.array-list {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.array-list-item {
+  background: #f9fafb !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 0.25rem !important;
+  padding: 0.25rem !important;
+  margin-bottom: 0.125rem !important;
+}
+
+/* Helper text */
+.MuiFormHelperText-root {
+  font-size: 0.75rem !important;
+  color: #6b7280 !important;
+  margin-top: 2px !important;
+}
+
+/* Group headers */
+.group-header {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+/* Horizontal layouts */
+.horizontal-layout {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  gap: 0.5rem !important;
+  align-items: flex-start !important;
+}
+
+/* Remove extra padding from nested groups */
+.MuiAccordion-root .MuiAccordion-root {
+  margin: 0.25rem 0 !important;
+}
+
+/* Make text inputs more compact */
+.MuiInputBase-input {
+  padding: 8px !important;
+  height: 20px !important;
+  line-height: 20px !important;
+  font-size: 0.8125rem !important;
+}
+
+/* Ensure select fields match input heights */
+.MuiSelect-select {
+  padding: 8px !important;
+  height: 20px !important;
+  line-height: 20px !important;
+  font-size: 0.8125rem !important;
+}
+
+.MuiInputBase-root {
+  height: 36px !important;
+}
+
+/* Adjust spacing for form groups */
+.vertical-layout > * {
+  margin-bottom: 0.375rem !important;
+}
+
+.vertical-layout > *:last-child {
+  margin-bottom: 0 !important;
+}
